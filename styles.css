@@ -129,3 +129,85 @@ copyright{display:block;text-align:center;padding:18px 0}
   .step{width:100%}
   .logo-text{display:none}
 }
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colors */
+:root {
+  --orange: #ff6600;
+  --black: #111;
+  --white: #fff;
+  --grey: #ccc;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('https://images.unsplash.com/photo-1515162305280-7d6d6b1c2b63?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  color: var(--white);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.logo span {
+  color: var(--orange);
+}
+
+/* Hero Content */
+.hero-content {
+  text-align: center;
+  animation: fadeInUp 1.5s ease forwards;
+}
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--grey);
+  margin-bottom: 20px;
+}
+.cta-btn {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white);
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.cta-btn:hover {
+  background: var(--black);
+  color: var(--orange);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
