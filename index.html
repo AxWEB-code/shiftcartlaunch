@@ -1,160 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShiftCart - Your Local Marketplace</title>
-  <style>
-    :root {
-      --orange: #ff6600;
-      --black: #111111;
-      --white: #ffffff;
-      --grey: #f4f4f4;
-    }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#ff6600" />
+  <title>ShiftCart — Shop Local, Get it Fast</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: var(--white);
-      color: var(--black);
-    }
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    header {
-      background-color: var(--black);
-      color: var(--white);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
 
-    header h1 {
-      color: var(--orange);
-      font-size: 1.5rem;
-    }
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
 
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      margin-left: 1rem;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--orange);
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      height: 80vh;
-      background: linear-gradient(to right, var(--orange), var(--black));
-      color: var(--white);
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    .hero-content {
-      max-width: 600px;
-      animation: slideUp 1.2s ease-out;
-    }
-
-    .hero-content h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-btn {
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      background-color: var(--white);
-      color: var(--orange);
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .cta-btn:hover {
-      transform: scale(1.05);
-      background-color: var(--grey);
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    /* Features Section */
-    .features {
-      padding: 4rem 2rem;
-      background-color: var(--grey);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .feature {
-      background: var(--white);
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .feature:hover {
-      transform: translateY(-10px);
-    }
-  </style>
+  <!-- Icons (replace with your icons) -->
+  <link rel="icon" href="icons/icon-192.png" type="image/png" />
 </head>
 <body>
 
-  <header>
-    <h1>ShiftCart</h1>
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-mark">SC</div>
+        <div class="logo-text">ShiftCart</div>
+      </div>
+
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#how">How it Works</a>
+        <a href="#vendors">Vendors</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-outline" href="#vendor-signup">Become a Vendor</a>
+      </nav>
+
+      <button id="mobile-menu-btn" class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
+  <!-- Mobile nav -->
+  <div id="mobile-nav" class="mobile-nav">
+    <a href="#features">Features</a>
+    <a href="#how">How it Works</a>
+    <a href="#vendors">Vendors</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn-solid" href="#vendor-signup">Become a Vendor</a>
+  </div>
+
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <h2>Shop Local, Get it Fast</h2>
-      <p>Connecting you to local restaurants, grocery stores, and fashion retailers with fast delivery.</p>
-      <button class="cta-btn">Get Started</button>
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <h1 class="hero-title">Shop Local. Delivered Fast.</h1>
+        <p class="hero-sub">Restaurants, groceries & fashion from your neighbourhood — ordered in minutes, delivered in under 2 hours.</p>
+
+        <div class="hero-ctas">
+          <a href="#waitlist" class="btn btn-solid">Join Waitlist</a>
+          <a href="#how" class="btn btn-outline">How it Works</a>
+        </div>
+
+        <ul class="trust-list">
+          <li>Free 2-month Vendor trial</li>
+          <li>Secure payments</li>
+          <li>Local support</li>
+        </ul>
+      </div>
+
+      <div class="hero-right">
+        <div class="phone-mockup" aria-hidden="true">
+          <div class="screen">
+            <!-- sample product cards inside mockup -->
+            <div class="mock-card card-a">Pizza — ₦2,500</div>
+            <div class="mock-card card-b">Groceries — ₦6,200</div>
+            <div class="mock-card card-c">Hoodie — ₦9,800</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="features" id="features">
-    <div class="feature">
-      <h3>Fast Delivery</h3>
-      <p>Get your orders delivered in under 2 hours.</p>
-    </div>
-    <div class="feature">
-      <h3>Local Vendors</h3>
-      <p>Support businesses in your community.</p>
-    </div>
-    <div class="feature">
-      <h3>Easy to Use</h3>
-      <p>Seamless browsing and ordering experience.</p>
+  <!-- Features -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Why ShiftCart?</h2>
+      <div class="features-grid">
+        <article class="feature" data-anim>
+          <div class="icon">🚀</div>
+          <h3>Fast Delivery</h3>
+          <p>Optimised routing to get food & goods to customers fast.</p>
+        </article>
+
+        <article class="feature" data-anim>
+          <div class="icon">🏬</div>
+          <h3>Local Vendors</h3>
+          <p>Support local businesses — discover neighbourhood stores and restaurants.</p>
+        </article>
+
+        <article class="feature" data-anim>
+          <div class="icon">🔒</div>
+          <h3>Secure Payments</h3>
+          <p>Pay with Paystack, Flutterwave or Cash on Delivery.</p>
+        </article>
+
+        <article class="feature" data-anim>
+          <div class="icon">📦</div>
+          <h3>Order Tracking</h3>
+          <p>Real-time updates for customers and vendors on every order.</p>
+        </article>
+      </div>
     </div>
   </section>
 
+  <!-- How it works -->
+  <section id="how" class="how">
+    <div class="container">
+      <h2 class="section-title">How it Works</h2>
+
+      <div class="steps">
+        <div class="step" data-anim>
+          <div class="step-num">1</div>
+          <h4>Browse & Choose</h4>
+          <p>Find your favourite vendors and add items to cart.</p>
+        </div>
+
+        <div class="step" data-anim>
+          <div class="step-num">2</div>
+          <h4>Checkout Securely</h4>
+          <p>Pay online or choose cash on delivery.</p>
+        </div>
+
+        <div class="step" data-anim>
+          <div class="step-num">3</div>
+          <h4>Delivered Fast</h4>
+          <p>Riders bring orders quickly — track every step.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vendors -->
+  <section id="vendors" class="vendors">
+    <div class="container">
+      <h2 class="section-title">Our Early Partners</h2>
+      <div class="vendor-logos" data-anim>
+        <!-- placeholders -->
+        <div class="vendor">Local Deli</div>
+        <div class="vendor">Green Mart</div>
+        <div class="vendor">Urban Threads</div>
+        <div class="vendor">Mama's Kitchen</div>
+      </div>
+
+      <div class="vendor-cta" id="vendor-signup">
+        <h3>Are you a vendor?</h3>
+        <p>Get listed on ShiftCart — first 2 months free.</p>
+        <a class="btn btn-solid" href="#waitlist">Sign up as Vendor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist form -->
+  <section id="waitlist" class="waitlist">
+    <div class="container">
+      <h2 class="section-title">Join the Waitlist</h2>
+      <p>Be the first to know when we launch in your area.</p>
+      <form id="waitlist-form" class="waitlist-form">
+        <input name="name" type="text" placeholder="Your name" required />
+        <input name="phone" type="text" placeholder="Phone number" required />
+        <input name="email" type="email" placeholder="Email (optional)" />
+        <select name="role">
+          <option value="customer">Customer</option>
+          <option value="vendor">Vendor</option>
+        </select>
+        <button class="btn btn-solid" type="submit">Join Waitlist</button>
+      </form>
+      <p id="waitlist-msg" class="muted"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>ShiftCart</h4>
+        <p>Local marketplace for food, groceries & fashion.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>hello@shiftcart.example</p>
+        <p>+234 800 000 0000</p>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <div class="socials">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> ShiftCart. All rights reserved.</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+
+  <!-- register service worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(() => {
+        console.log('SW registered');
+      }).catch(err => console.warn('SW error', err));
+    }
+  </script>
 </body>
 </html>
