@@ -169,22 +169,22 @@ copyright{display:block;text-align:center;padding:18px 0}
 
 .phone-mockup {
   position: relative;
-  width: 360px; /* adjust as needed */
-  margin: 0 auto;
+  width: 360px;
+  height: auto;
 }
 
 .phone-frame {
-  width: 100%;
   display: block;
+  width: 100%;
+  height: auto;
 }
 
-.phone-mockup .screen {
+.screen-content {
   position: absolute;
-  top: 8%;   /* adjust to align with SVG screen area */
-  left: 8%;
-  width: 84%;
-  height: 84%;
-  background: linear-gradient(180deg, #fff, #f6f6f6);
-  border-radius: 20px;
+  top: 10%; /* adjust so content fits inside frame */
+  left: 10%;
+  width: 80%;
+  height: 80%;
   overflow: hidden;
+  border-radius: 20px;
 }
