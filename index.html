@@ -211,7 +211,7 @@
         features.forEach((feature, index) => {
           setTimeout(() => {
             feature.classList.add("show");
-          }, index * 170); // 150ms delay per feature
+          }, index * 150); // 150ms delay per feature
         });
       } else {
         features.forEach(feature => {
@@ -219,7 +219,7 @@
         });
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.1 });
 
   if (features.length) observer.observe(features[0].parentNode);
 });
