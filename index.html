@@ -201,5 +201,29 @@
       }).catch(err => console.warn('SW error', err));
     }
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const features = document.querySelectorAll("[data-anim]");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        features.forEach((feature, index) => {
+          setTimeout(() => {
+            feature.classList.add("show");
+          }, index * 150); // 150ms delay per feature
+        });
+      } else {
+        features.forEach(feature => {
+          feature.classList.remove("show"); // replay animation
+        });
+      }
+    });
+  }, { threshold: 0.2 });
+
+  if (features.length) observer.observe(features[0].parentNode);
+});
+
+  </script>
 </body>
 </html>
