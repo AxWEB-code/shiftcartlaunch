@@ -167,8 +167,8 @@ copyright{display:block;text-align:center;padding:18px 0}
 }
 
 .phone-mockup .iphone-frame {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: auto%;
   display: block;
 }
 
