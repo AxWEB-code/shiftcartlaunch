@@ -199,3 +199,8 @@ copyright{display:block;text-align:center;padding:18px 0}
   transform: translateY(0);
 }
 
+.animate {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+

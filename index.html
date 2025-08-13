@@ -201,29 +201,25 @@
       }).catch(err => console.warn('SW error', err));
     }
   </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
+<script>
+document.addEventListener("DOMContentLoaded", () => {
   const features = document.querySelectorAll("[data-anim]");
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        features.forEach((feature, index) => {
-          setTimeout(() => {
-            feature.classList.add("show");
-          }, index * 150); // 150ms delay per feature
-        });
+        entry.target.classList.add("show");
       } else {
-        features.forEach(feature => {
-          feature.classList.remove("show"); // replay animation
-        });
+        entry.target.classList.remove("show"); // Remove if you want replay
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.2 }); // Trigger when 20% is visible
 
-  if (features.length) observer.observe(features[0].parentNode);
+  features.forEach((feature) => {
+    observer.observe(feature);
+  });
 });
+</script>
 
-  </script>
 </body>
 </html>
