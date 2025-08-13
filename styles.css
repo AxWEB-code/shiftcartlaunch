@@ -188,3 +188,10 @@ copyright{display:block;text-align:center;padding:18px 0}
   object-fit: cover;
 }
 
+/* Hide menu bar on screens below 768px (Android/mobile) */
+@media (max-width: 768px) {
+    #menu-toggle,
+    #mobile-menu {
+        display: none !important;
+    }
+}
