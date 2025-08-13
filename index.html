@@ -220,6 +220,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const hero = document.querySelector(".hero"); // your hero container
+  const heroItems = hero.querySelectorAll("[data-anim]");
+
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        heroItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.classList.add("show");
+          }, index * 150);
+        });
+      } else {
+        heroItems.forEach(item => {
+          item.classList.remove("show"); // allows replay
+        });
+      }
+    });
+  }, { threshold: 0.1 });
+
+  if (hero) heroObserver.observe(hero);
+});
+</script>
 
 </body>
 </html>
