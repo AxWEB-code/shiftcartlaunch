@@ -33,10 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
     waitMsg.textContent = '⏳ Sending...';
     const formData = new FormData(waitForm);
 
-    fetch('waitlist.php', {  // <-- local endpoint
-      method: 'POST',
-      body: formData
-    })
+   fetch('https://ecnsportal.com.ng/waitlist.php', {  
+    method: 'POST',
+    body: formData
+})
+
       .then(r => {
         if (!r.ok) throw new Error('Network error');
         return r.json();
