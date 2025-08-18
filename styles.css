@@ -204,3 +204,19 @@ copyright{display:block;text-align:center;padding:18px 0}
   animation-delay: 0.2s;
 }
 
+.logo-mark {
+  height: 40px;
+  width: 40px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* ensures image stays inside */
+  box-shadow: var(--shadow);
+}
+
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps aspect ratio */
+}
