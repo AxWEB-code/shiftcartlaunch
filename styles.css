@@ -45,7 +45,7 @@ body{
 .logo{display:flex; align-items:center; gap:12px}
 .logo-mark{
   height:40px; width:40px; border-radius:9px;
-  background:var(--orange); color:var(--white);
+  background:var(--black); color:var(--white);
   display:flex; align-items:center; justify-content:center;
   font-weight:700; box-shadow:var(--shadow);
 }
